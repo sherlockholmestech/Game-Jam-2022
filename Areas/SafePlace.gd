@@ -4,9 +4,11 @@ onready var timer = $Timer
 var time_left
 var time_text
 var isRunning = true
+export(int) var wait_time
 
 	
 func _process(delta: float) -> void:
+	timer.wait_time = wait_time
 	if time_left == 0:
 		time_text = " "
 	else:

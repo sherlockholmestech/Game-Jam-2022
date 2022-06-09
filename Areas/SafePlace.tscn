@@ -24,6 +24,7 @@
 [node name="SafePlace" type="Area2D"]
 collision_mask = 0
 script = ExtResource( 2 )
+wait_time = 16
 
 [node name="SafePad" type="CollisionShape2D" parent="."]
 
@@ -33,7 +34,7 @@ cell_size = Vector2( 16, 16 )
 format = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 16.0
 one_shot = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
