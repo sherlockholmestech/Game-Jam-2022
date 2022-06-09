@@ -39,7 +39,7 @@ one_shot = true
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = 140.0
+margin_top = 165.0
 margin_right = 121.0
 margin_bottom = 180.0
 theme = ExtResource( 3 )

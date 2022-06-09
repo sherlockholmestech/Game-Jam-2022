@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		time_text = str(time_left)
 	$RichTextLabel.clear()
 	time_left = timer.time_left
-	$RichTextLabel.add_text("Time Left: " + time_text)
+	$RichTextLabel.add_text("\nTime Left: " + time_text)
 	
 func _on_Timer_timeout() -> void:
 	print("ur ded")
