@@ -32,3 +32,10 @@ func move_state(delta):
 	
 func move():
 	velocity = move_and_slide(velocity)
+
+func die():
+	queue_free()
+
+
+func _on_Timer_timeout() -> void:
+	die()

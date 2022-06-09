@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
+[ext_resource path="res://Theme.theme" type="Theme" id=3]
+[ext_resource path="res://assets/Fonts/Font.res" type="DynamicFont" id=4]
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +18,8 @@ margin_left = 129.0
 margin_top = 111.0
 margin_right = 192.0
 margin_bottom = 131.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "PLAY"
 icon = ExtResource( 2 )
 
