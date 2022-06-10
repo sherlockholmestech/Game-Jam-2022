@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/main/tile032.png" type="Texture" id=1]
 [ext_resource path="res://assets/main/tile017.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/main/tile018.png" type="Texture" id=6]
 [ext_resource path="res://Areas/SafePlace.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/LevelMap.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -129,8 +128,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 8 )
 
-[node name="LevelMap" type="Node2D"]
-script = ExtResource( 9 )
+[node name="Level1" type="Node2D"]
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

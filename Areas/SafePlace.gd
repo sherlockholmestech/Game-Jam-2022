@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 		time_text = " "
 	else:
 		time_text = str(time_left)
-	$RichTextLabel.clear()
+	$CanvasLayer/RichTextLabel.clear()
 	time_left = timer.time_left
-	$RichTextLabel.add_text("\nTime Left: " + time_text)
+	$CanvasLayer/RichTextLabel.add_text("\nTime Left: " + time_text)
 	
 func _on_Timer_timeout() -> void:
 	print("ur ded")

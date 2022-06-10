@@ -17,4 +17,8 @@ func _ready() -> void:
 
 
 func _on_Button_pressed() -> void:
-	get_tree().change_scene("res://Levels/LevelMap.tscn")
+	get_tree().change_scene("res://Levels/Introduction.tscn")
+
+
+func _on_About_pressed() -> void:
+	get_tree().change_scene("res://About.tscn")

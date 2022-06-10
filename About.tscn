@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="About" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 184.0
+color = Color( 0.239216, 0.0862745, 0.717647, 1 )
