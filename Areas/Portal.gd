@@ -10,5 +10,8 @@ func next_level():
 
 
 func _on_Portal_body_entered(body: Node) -> void:
-	emit_signal("portal_entered")
-	next_level()
+	if body.is_in_group("Player"):
+		emit_signal("portal_entered")
+		next_level()
+	else:
+		pass

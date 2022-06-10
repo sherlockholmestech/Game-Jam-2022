@@ -31,4 +31,3 @@ func _on_SafePlace_body_exited(body: Node) -> void:
 
 func _on_Portal_portal_entered() -> void:
 	timer.stop()
-	$RichTextLabel.clear()
