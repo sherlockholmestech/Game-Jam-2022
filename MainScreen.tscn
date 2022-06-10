@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
 [ext_resource path="res://Theme.theme" type="Theme" id=3]
 [ext_resource path="res://assets/main/tile132.png" type="Texture" id=4]
+[ext_resource path="res://assets/Music/Dissonance.wav" type="AudioStream" id=5]
+[ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/main/tile149.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -25,21 +28,42 @@ color = Color( 0.168627, 0.372549, 0.654902, 1 )
 
 [node name="Play" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 72.0
+margin_top = 48.0
 margin_right = 191.0
-margin_bottom = 94.0
+margin_bottom = 70.0
 theme = ExtResource( 3 )
 text = "PLAY"
 icon = ExtResource( 2 )
 
 [node name="About" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 128.0
+margin_top = 96.0
 margin_right = 192.0
-margin_bottom = 148.0
+margin_bottom = 116.0
 theme = ExtResource( 3 )
 text = "ABOUT"
 icon = ExtResource( 4 )
 
+[node name="Quit" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 144.0
+margin_right = 192.0
+margin_bottom = 164.0
+theme = ExtResource( 3 )
+text = "QUIT"
+icon = ExtResource( 7 )
+
+[node name="Dissonance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "Ambient"
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource( 6 )]
+margin_right = 320.0
+margin_bottom = 180.0
+
 [connection signal="pressed" from="Play" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+
+[editable path="SceneTransitionRect"]

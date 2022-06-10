@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Theme.theme" type="Theme" id=1]
 [ext_resource path="res://assets/main/tile194.png" type="Texture" id=2]
 [ext_resource path="res://About.gd" type="Script" id=3]
+[ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -748,5 +749,10 @@ margin_top = 29.0
 margin_right = -4.0
 margin_bottom = -4.0
 theme = SubResource( 3 )
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource( 4 )]
+margin_right = 640.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 320, 180 )
 
 [connection signal="pressed" from="ViewportContainer/Button" to="." method="_on_Button_pressed"]
