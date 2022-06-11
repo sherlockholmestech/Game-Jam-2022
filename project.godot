@@ -10,9 +10,13 @@ config_version=4
 
 [application]
 
-config/name="RI Game Jam 2022"
+config/name="A Sinister Time (RI Game Jam 2022)"
 run/main_scene="res://MainScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+PlayerData="*res://Player/PlayerData.tscn"
 
 [display]
 

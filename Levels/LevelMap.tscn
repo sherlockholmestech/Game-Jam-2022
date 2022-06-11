@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/main/tile032.png" type="Texture" id=1]
 [ext_resource path="res://assets/main/tile017.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Misc/BarrierBlock.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Areas/Portal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://DieMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/PlayerData.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/main/tile065.png" type="Texture" id=13]
+[ext_resource path="res://assets/main/tile064.png" type="Texture" id=14]
+[ext_resource path="res://assets/main/tile066.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -19,6 +23,15 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="TileSet" id=1]
@@ -127,6 +140,69 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
+7/name = "tile064.png 7"
+7/texture = ExtResource( 14 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 7 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "tile065.png 8"
+8/texture = ExtResource( 13 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 8 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "tile066.png 9"
+9/texture = ExtResource( 15 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 9 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 8 )
@@ -176,8 +252,11 @@ margin_top = -72.0
 margin_right = -128.0
 margin_bottom = -72.0
 
+[node name="PlayerData" parent="." instance=ExtResource( 12 )]
+
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
 [connection signal="timeout" from="SafePlace/Timer" to="Player" method="_on_Timer_timeout"]
+[connection signal="add_stats" from="Player" to="PlayerData" method="_on_Player_add_stats"]
 [connection signal="die_screen" from="Player" to="Died" method="_on_Player_die_screen"]
 
 [editable path="Portal"]

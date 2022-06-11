@@ -8,6 +8,7 @@ onready var stats = $Stats
 onready var timer = $Timer
 onready var regentimer = $RegenTimer
 signal die_screen
+signal add_stats
 
 const DeathEffect = preload("res://Effects/DeathEffect.tscn")
 
@@ -80,3 +81,16 @@ func _on_RegenTimer_timeout() -> void:
 		stats.health = stats.health + 1
 	else:
 		regentimer.start()
+
+
+func _on_SpeedPotion_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		ACCELERATION = ACCELERATION + 500
+		MAX_SPEED = MAX_SPEED + 100
+		$PotionLength.start()
+
+
+func _on_PotionLength_timeout() -> void:
+	ACCELERATION = ACCELERATION - 500
+	MAX_SPEED = MAX_SPEED - 100
+

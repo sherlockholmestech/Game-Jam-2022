@@ -1,5 +1,6 @@
 extends Control
 
+var scoretext
 
 func _on_Button_pressed() -> void:
 	$CanvasLayer/UI.visible = false
@@ -7,4 +8,7 @@ func _on_Button_pressed() -> void:
 
 
 func _on_Player_die_screen() -> void:
+	scoretext = str(PlayerData.score)
 	$CanvasLayer/UI.visible = true
+	$CanvasLayer/UI/Time.clear()
+	$CanvasLayer/UI/Time.add_text("Score: " + scoretext)

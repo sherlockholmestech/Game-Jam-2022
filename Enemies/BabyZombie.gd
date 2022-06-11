@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-
-var run_speed = 30
+var run_speed = 60
 var velocity = Vector2.ZERO
 var player = null
 onready var stats = $Stats
@@ -31,5 +30,3 @@ func _on_Stats_no_health() -> void:
 func _on_Hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("SwordHitbox"):
 		stats.health -= area.damage
-
-
