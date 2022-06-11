@@ -60,8 +60,16 @@ func _on_Stats_no_health() -> void:
 	
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
+	var isinarea = false
 	if area.is_in_group("ZombieHitbox"):
-		stats.health -= area.damage
+		isinarea = true
+		while isinarea:
+			stats.health -= area.damage
+			if area.is_in_group("ZombieHitbox"):
+				isinarea = false
+			yield(get_tree().create_timer(2), "timeout")
+	else:
+		isinarea = false
 
 
 

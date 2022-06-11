@@ -2,7 +2,6 @@ extends Area2D
 
 signal portal_entered
 
-onready var _transition_rect := $SceneTransitionRect
 
 export(String, FILE, "*.tscn") var target_scene
 
