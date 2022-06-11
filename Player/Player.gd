@@ -66,6 +66,7 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 		isinarea = true
 		while isinarea:
 			stats.health -= area.damage
+			$Damage.play(0)
 			if area.is_in_group("ZombieHitbox"):
 				isinarea = false
 			yield(get_tree().create_timer(2), "timeout")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Theme.theme" type="Theme" id=1]
 [ext_resource path="res://assets/main/tile194.png" type="Texture" id=2]
 [ext_resource path="res://About.gd" type="Script" id=3]
 [ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Music/Chirps.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -754,5 +755,10 @@ theme = SubResource( 3 )
 margin_right = 640.0
 margin_bottom = 368.0
 rect_min_size = Vector2( 320, 180 )
+
+[node name="Chirps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "Ambient"
 
 [connection signal="pressed" from="ViewportContainer/Button" to="." method="_on_Button_pressed"]

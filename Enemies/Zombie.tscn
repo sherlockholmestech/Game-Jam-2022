@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/main/tile162.png" type="Texture" id=1]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/ProgressBar/Bottom.png" type="Texture" id=7]
 [ext_resource path="res://Areas/Hurtbox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Areas/Hitbox.gd" type="Script" id=9]
+[ext_resource path="res://assets/SoundEffects/damage1.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4.5 )
@@ -65,6 +66,10 @@ damage = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 5 )
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+bus = "Effects"
 
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]

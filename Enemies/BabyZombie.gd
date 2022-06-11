@@ -29,4 +29,5 @@ func _on_Stats_no_health() -> void:
 
 func _on_Hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("SwordHitbox"):
+		$Damage.play(0)
 		stats.health -= area.damage

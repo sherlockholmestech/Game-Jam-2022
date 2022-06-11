@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/main/tile160.png" type="Texture" id=3]
 
 [node name="BabyZombie" instance=ExtResource( 1 )]
-collision_mask = 61
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
