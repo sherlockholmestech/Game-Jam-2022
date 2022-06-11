@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Transitions/FadeOutMusic.gd" type="Script" id=1]
+
+[node name="FadeOutMusic" type="Tween"]
+script = ExtResource( 1 )
+
+[connection signal="tween_completed" from="." to="." method="_on_FadeOutMusic_tween_completed"]

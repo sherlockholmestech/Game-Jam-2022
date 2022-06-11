@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/main/tile032.png" type="Texture" id=1]
 [ext_resource path="res://assets/main/tile017.png" type="Texture" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://assets/main/tile064.png" type="Texture" id=16]
 [ext_resource path="res://assets/main/tile066.png" type="Texture" id=17]
 [ext_resource path="res://assets/Darkness/light.png" type="Texture" id=18]
+[ext_resource path="res://Levels/Ambient.gd" type="Script" id=19]
+[ext_resource path="res://assets/Music/Keynote.wav" type="AudioStream" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -210,6 +212,36 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 8 )
 
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -20.0, -80.0 ]
+}
+
 [node name="Level1" type="Node2D"]
 
 [node name="World" type="TileMap" parent="."]
@@ -274,7 +306,17 @@ margin_bottom = -72.0
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
+script = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ambient"]
+anims/RESET = SubResource( 10 )
+anims/fade = SubResource( 11 )
+
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
+[connection signal="portal_entered" from="Portal" to="Ambient" method="_on_Portal_portal_entered"]
 [connection signal="timeout" from="SafePlace/Timer" to="Player" method="_on_Timer_timeout"]
 [connection signal="die_screen" from="Player" to="Died" method="_on_Player_die_screen"]
 

@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerData="*res://Player/PlayerData.tscn"
+FadeOutMusic="*res://Transitions/FadeOutMusic.tscn"
 
 [display]
 

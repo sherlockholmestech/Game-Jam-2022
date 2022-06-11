@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
@@ -16,6 +16,36 @@ font_data = SubResource( 4 )
 
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [node name="MainScreen" type="Control"]
 script = ExtResource( 1 )
@@ -57,6 +87,10 @@ icon = ExtResource( 7 )
 stream = ExtResource( 5 )
 autoplay = true
 bus = "Ambient"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dissonance"]
+anims/RESET = SubResource( 5 )
+anims/fade = SubResource( 6 )
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 6 )]
 margin_right = 320.0

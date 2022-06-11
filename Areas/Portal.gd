@@ -13,6 +13,7 @@ func next_level():
 func _on_Portal_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		emit_signal("portal_entered")
+		yield(get_tree().create_timer(1.2), "timeout")
 		next_level()
 	else:
 		pass

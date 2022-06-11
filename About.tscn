@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Theme.theme" type="Theme" id=1]
 [ext_resource path="res://assets/main/tile194.png" type="Texture" id=2]
 [ext_resource path="res://About.gd" type="Script" id=3]
 [ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Music/Chirps.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Fonts/Font2.tres" type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -14,6 +15,36 @@ font_data = SubResource( 4 )
 
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [node name="About" type="Control"]
 rect_scale = Vector2( 0.5, 0.5 )
@@ -43,6 +74,7 @@ margin_bottom = 328.0
 theme = ExtResource( 1 )
 
 [node name="Developers" type="Tabs" parent="ViewportContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -50,6 +82,20 @@ margin_top = 23.0
 margin_right = -4.0
 margin_bottom = -4.0
 theme = SubResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ViewportContainer/TabContainer/Developers"]
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 636.0
+margin_bottom = 305.0
+theme = ExtResource( 1 )
+text = "Lead developer, music composer:  Sherlock Holmes
+
+The man who helped me generate ideas and helped me balance my game: Xuanbo
+
+The guy with millions of wild suggestions: Ok™
+
+Special thanks to the Godot team for making this possible."
 
 [node name="Licence" type="Tabs" parent="ViewportContainer/TabContainer"]
 visible = false
@@ -742,7 +788,6 @@ Public License instead of this License.  But first, please read
 "
 
 [node name="Credits" type="Tabs" parent="ViewportContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -750,6 +795,47 @@ margin_top = 29.0
 margin_right = -4.0
 margin_bottom = -4.0
 theme = SubResource( 3 )
+
+[node name="Big Text" type="RichTextLabel" parent="ViewportContainer/TabContainer/Credits"]
+margin_left = 4.0
+margin_top = -5.0
+margin_right = 316.0
+margin_bottom = 299.0
+theme = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 6 )
+text = "
+
+
+
+
+
+A very big thank you to:"
+
+[node name="Credits" type="RichTextLabel" parent="ViewportContainer/TabContainer/Credits"]
+margin_left = 316.0
+margin_top = -5.0
+margin_right = 636.0
+margin_bottom = 299.0
+text = "Aspects of the game:
+
+The source code: Sherlock Holmes
+Art: itch.io
+Sound Effects: Sherlock Holmes
+Visual sprites: opengameart.org, itch,io, Sherlock Holmes
+Themes: itch.io
+Music: Sherlock Holmes
+Fonts: itch.io
+Cursors: itch.io
+Lighting effect: Godot Documentation
+
+Thank you to the following software teams for providing the software that I used:
+
+The Godot team
+The LibreSprite team
+The LMMS team
+The MuseScore team
+The Audacity team
+The Visual Studio Code team"
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 4 )]
 margin_right = 640.0
@@ -760,5 +846,9 @@ rect_min_size = Vector2( 320, 180 )
 stream = ExtResource( 5 )
 autoplay = true
 bus = "Ambient"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chirps"]
+anims/RESET = SubResource( 5 )
+anims/fade = SubResource( 6 )
 
 [connection signal="pressed" from="ViewportContainer/Button" to="." method="_on_Button_pressed"]

@@ -62,7 +62,7 @@ texture_progress = ExtResource( 6 )
 
 [node name="Hitbox" parent="." groups=["ZombieHitbox"] instance=ExtResource( 5 )]
 script = ExtResource( 9 )
-damage = 4
+damage = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 5 )
