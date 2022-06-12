@@ -4,6 +4,8 @@ export var ACCELERATION = 500
 export var MAX_SPEED = 80
 export var ROLL_SPEED = 125
 export var FRICTION = 500
+var currentarea
+var currentdamage
 onready var stats = $Stats
 onready var timer = $Timer
 onready var regentimer = $RegenTimer
@@ -65,13 +67,23 @@ func _on_Stats_no_health() -> void:
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ZombieHitbox"):
+		currentarea = area
 		$Damage.play(0)
 		stats.health -= area.damage
+		currentdamage = area.damage
+		$DamageTimer.start()
+	else:
+		currentarea = null
+		
 
 
 
 func _on_RegenTimer_timeout() -> void:
-	if stats.health <= 18:
+	if stats.health <= 16:
+		stats.health = stats.health + 4
+	if stats.health == 17:
+		stats.health = stats.health + 3
+	if stats.health == 18:
 		stats.health = stats.health + 2
 	if stats.health == 19:
 		stats.health = stats.health + 1
@@ -90,3 +102,17 @@ func _on_PotionLength_timeout() -> void:
 	ACCELERATION = ACCELERATION - 500
 	MAX_SPEED = MAX_SPEED - 100
 
+
+
+func _on_Hitbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("ZombieHitbox"):
+		yield(get_tree().create_timer(2), "timeout")
+		$DamageTimer.stop()
+		currentarea = null
+
+
+func _on_DamageTimer_timeout() -> void:
+	if not currentarea == null:
+		$Damage.play(0)
+		stats.health -= currentdamage
+		print(stats.health)

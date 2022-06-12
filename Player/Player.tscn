@@ -45,14 +45,14 @@ position = Vector2( 10, 0 )
 collision_layer = 2
 collision_mask = 28
 script = ExtResource( 6 )
-damage = 2
+damage = 5
 
 [node name="Sword" type="Sprite" parent="Swordpos/SwordArea"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Swordpos/SwordArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swordpos/SwordArea" groups=["SwordHitbox"]]
 shape = SubResource( 2 )
 disabled = true
 
@@ -81,7 +81,7 @@ texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )
 
 [node name="RegenTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="PotionLength" type="Timer" parent="."]
@@ -91,10 +91,14 @@ wait_time = 10.0
 stream = ExtResource( 10 )
 bus = "Effects"
 
+[node name="DamageTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Swordpos/Timer" to="Swordpos" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
 [connection signal="timeout" from="PotionLength" to="." method="_on_PotionLength_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
 
 [editable path="Hitbox"]
