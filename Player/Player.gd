@@ -8,7 +8,7 @@ onready var stats = $Stats
 onready var timer = $Timer
 onready var regentimer = $RegenTimer
 signal die_screen
-signal add_stats
+signal died
 
 const DeathEffect = preload("res://Effects/DeathEffect.tscn")
 
@@ -47,7 +47,10 @@ func die():
 	var deathEffect = DeathEffect.instance()
 	get_parent().add_child(deathEffect)
 	deathEffect.global_position = global_position
+	emit_signal("died")
 	emit_signal("die_screen")
+	PlayerData.score = 0
+	
 	
 
 
@@ -61,17 +64,9 @@ func _on_Stats_no_health() -> void:
 	
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
-	var isinarea = false
 	if area.is_in_group("ZombieHitbox"):
-		isinarea = true
-		while isinarea:
-			stats.health -= area.damage
-			$Damage.play(0)
-			if area.is_in_group("ZombieHitbox"):
-				isinarea = false
-			yield(get_tree().create_timer(2), "timeout")
-	else:
-		isinarea = false
+		$Damage.play(0)
+		stats.health -= area.damage
 
 
 

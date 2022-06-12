@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/main/tile032.png" type="Texture" id=1]
 [ext_resource path="res://assets/main/tile017.png" type="Texture" id=2]
@@ -19,8 +19,7 @@
 [ext_resource path="res://assets/main/tile066.png" type="Texture" id=17]
 [ext_resource path="res://Potions/SpeedPotion.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/Darkness/light.png" type="Texture" id=19]
-[ext_resource path="res://assets/Music/Dissonance.wav" type="AudioStream" id=20]
-[ext_resource path="res://Levels/Ambient.gd" type="Script" id=21]
+[ext_resource path="res://Enemies/Ghosts.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -213,43 +212,13 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 8 )
 
-[sub_resource type="Animation" id=11]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -80.0 ]
-}
-
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="World" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 12, 3, 0, 65536, 2, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 2, 0, 65546, 1, 0, 65547, 6, 0, 65548, 3, 0, 131072, 1, 0, 131073, 3, 0, 131074, 6, 0, 131075, 3, 0, 131076, 3, 0, 131077, 1, 0, 131078, 1, 0, 131079, 6, 0, 131080, 6, 0, 131081, 3, 0, 131082, 6, 0, 131083, 6, 0, 131084, 3, 0, 196608, 2, 0, 196609, 2, 0, 196610, 6, 0, 196611, 2, 0, 196612, 3, 0, 196613, 7, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 196619, 1, 0, 196620, 3, 0, 262144, 2, 0, 262145, 2, 0, 262146, 6, 0, 262147, 2, 0, 262148, 2, 0, 262149, 6, 0, 262150, 6, 0, 262151, 1, 0, 262152, 1, 0, 262153, 6, 0, 262154, 6, 0, 262155, 1, 0, 262156, 3, 0, 262157, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 6, 0, 327683, 2, 0, 327684, 2, 0, 327685, 6, 0, 327686, 6, 0, 327687, 1, 0, 327688, 1, 0, 327689, 6, 0, 327690, 1, 0, 327691, 1, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 3, 0, 327696, 3, 0, 327697, 3, 0, 393216, 2, 0, 393217, 2, 0, 393218, 6, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 6, 0, 393223, 1, 0, 393224, 1, 0, 393225, 6, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 6, 0, 393230, 6, 0, 393231, 6, 0, 393232, 5, 0, 393233, 3, 0, 458752, 2, 0, 458753, 2, 0, 458754, 6, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 6, 0, 458759, 1, 0, 458760, 1, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 3, 0, 458767, 3, 0, 458768, 3, 0, 458769, 3, 0, 524288, 2, 0, 524289, 2, 0, 524290, 6, 0, 524291, 6, 0, 524292, 6, 0, 524293, 6, 0, 524294, 6, 0, 524295, 2, 0, 524296, 1, 0, 524297, 6, 0, 524298, 1, 0, 524299, 6, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 3, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 1, 0, 589833, 6, 0, 589834, 6, 0, 589835, 6, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 3, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 1, 0, 655369, 1, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 3, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 12, 3, 0, 65536, 2, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 2, 0, 65546, 1, 0, 65547, 6, 0, 65548, 3, 0, 131072, 1, 0, 131073, 3, 0, 131074, 6, 0, 131075, 3, 0, 131076, 3, 0, 131077, 1, 0, 131078, 1, 0, 131079, 6, 0, 131080, 6, 0, 131081, 5, 0, 131082, 6, 0, 131083, 6, 0, 131084, 3, 0, 196608, 2, 0, 196609, 2, 0, 196610, 6, 0, 196611, 2, 0, 196612, 3, 0, 196613, 7, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 196619, 1, 0, 196620, 3, 0, 262144, 2, 0, 262145, 2, 0, 262146, 6, 0, 262147, 2, 0, 262148, 2, 0, 262149, 6, 0, 262150, 6, 0, 262151, 1, 0, 262152, 1, 0, 262153, 6, 0, 262154, 6, 0, 262155, 1, 0, 262156, 3, 0, 262157, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 6, 0, 327683, 2, 0, 327684, 2, 0, 327685, 6, 0, 327686, 6, 0, 327687, 1, 0, 327688, 1, 0, 327689, 6, 0, 327690, 1, 0, 327691, 1, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 3, 0, 327696, 3, 0, 327697, 3, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 6, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 6, 0, 393223, 1, 0, 393224, 1, 0, 393225, 6, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 6, 0, 393230, 6, 0, 393231, 6, 0, 393232, 5, 0, 393233, 6, 0, 393234, 6, 0, 393235, 6, 0, 393236, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 6, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 6, 0, 458759, 1, 0, 458760, 1, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 3, 0, 458767, 3, 0, 458768, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 6, 0, 458772, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 6, 0, 524291, 6, 0, 524292, 6, 0, 524293, 6, 0, 524294, 6, 0, 524295, 6, 0, 524296, 1, 0, 524297, 6, 0, 524298, 1, 0, 524299, 6, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 3, 0, 524304, 2, 0, 524305, 3, 0, 524306, 6, 0, 524307, 6, 0, 524308, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 6, 0, 589832, 1, 0, 589833, 6, 0, 589834, 6, 0, 589835, 6, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 3, 0, 589840, 2, 0, 589841, 3, 0, 589842, 6, 0, 589843, 2, 0, 589844, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 6, 0, 655368, 1, 0, 655369, 1, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 3, 0, 655377, 6, 0, 655378, 6, 0, 655379, 2, 0, 655380, 2, 0, 720902, 3, 0, 720903, 6, 0, 720904, 1, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 2, 0, 720912, 2, 0, 720913, 6, 0, 720914, 2, 0, 720915, 2, 0, 720916, 2, 0, 786438, 3, 0, 786439, 6, 0, 786440, 6, 0, 786441, 6, 0, 786442, 6, 0, 786443, 6, 0, 786444, 6, 0, 786445, 2, 0, 786446, 2, 0, 786447, 2, 0, 786448, 3, 0, 786449, 6, 0, 786450, 2, 0, 786451, 2, 0, 786452, 2, 0, 851974, 2, 0, 851975, 2, 0, 851976, 2, 0, 851977, 2, 0, 851978, 2, 0, 851979, 2, 0, 851980, 6, 0, 851981, 6, 0, 851982, 6, 0, 851983, 6, 0, 851984, 6, 0, 851985, 6, 0, 851986, 2, 0, 851987, 2, 0, 851988, 2, 0, 917510, 2, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 2, 0, 917524, 2, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 32, 24 )
@@ -262,7 +231,6 @@ texture_scale = 0.1
 
 [node name="Portal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 264, 104 )
-target_scene = "res://Levels/Level3.tscn"
 
 [node name="SafePlace" parent="." instance=ExtResource( 7 )]
 
@@ -275,20 +243,32 @@ tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 0, 65539, 0, 0 )
 
 [node name="Enemies" type="YSort" parent="."]
 
+[node name="Ghosts" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 104, 56 )
+
+[node name="Ghosts2" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 80, 136 )
+
+[node name="Ghosts3" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 208, 120 )
+
+[node name="Ghosts4" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( 200, 208 )
+
 [node name="Zombie" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 96, 80 )
-
-[node name="BabyZombie" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 40, 128 )
-
-[node name="BabyZombie2" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 152, 120 )
-
-[node name="Zombie2" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 168, 56 )
 
-[node name="BabyZombie3" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 216, 112 )
+[node name="Zombie2" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 120, 200 )
+
+[node name="Zombie3" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 104, 96 )
+
+[node name="BabyZombie" parent="Enemies" instance=ExtResource( 14 )]
+position = Vector2( 152, 136 )
+
+[node name="BabyZombie2" parent="Enemies" instance=ExtResource( 14 )]
+position = Vector2( 184, 144 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 32, 24 )
@@ -301,6 +281,9 @@ position = Vector2( 40, 40 )
 
 [node name="BarrierBlock2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 248, 104 )
+
+[node name="BarrierBlock3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 280, 104 )
 
 [node name="Died" parent="." instance=ExtResource( 13 )]
 margin_left = -128.0
@@ -316,18 +299,7 @@ position = Vector2( 88, 72 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
-[node name="Ambient" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
-autoplay = true
-bus = "Ambient"
-script = ExtResource( 21 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ambient"]
-anims/RESET = SubResource( 11 )
-anims/fade = SubResource( 10 )
-
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
-[connection signal="portal_entered" from="Portal" to="Ambient" method="_on_Portal_portal_entered"]
 [connection signal="timeout" from="SafePlace/Timer" to="Player" method="_on_Timer_timeout"]
 [connection signal="die_screen" from="Player" to="Died" method="_on_Player_die_screen"]
 [connection signal="body_entered" from="SpeedPotion" to="Player" method="_on_SpeedPotion_body_entered"]
@@ -336,4 +308,5 @@ anims/fade = SubResource( 10 )
 [editable path="SafePlace"]
 [editable path="Player"]
 [editable path="Player/Hitbox"]
+[editable path="PlayerData"]
 [editable path="SpeedPotion"]

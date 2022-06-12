@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-signal died
 
 var run_speed = 30
 var velocity = Vector2.ZERO
@@ -12,6 +11,8 @@ onready var progressbar = $TextureProgress
 func _physics_process(delta):
 	if player:
 		velocity = position.direction_to(player.position) * run_speed
+	else:
+		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
 	progressbar.value = stats.health
 
@@ -33,4 +34,5 @@ func _on_Hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("SwordHitbox"):
 		$Damage.play(0)
 		stats.health -= area.damage
+
 

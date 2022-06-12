@@ -22,5 +22,11 @@ max_health = 6
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( -0.5, 3 )
 
+[node name="TextureProgress" parent="." index="5"]
+max_value = 6.0
+
+[node name="Hitbox" parent="." index="6"]
+damage = 6
+
 [editable path="Hurtbox"]
 [editable path="Hitbox"]

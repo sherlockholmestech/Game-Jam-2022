@@ -256,7 +256,6 @@ margin_bottom = -72.0
 
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
 [connection signal="timeout" from="SafePlace/Timer" to="Player" method="_on_Timer_timeout"]
-[connection signal="add_stats" from="Player" to="PlayerData" method="_on_Player_add_stats"]
 [connection signal="die_screen" from="Player" to="Died" method="_on_Player_die_screen"]
 
 [editable path="Portal"]

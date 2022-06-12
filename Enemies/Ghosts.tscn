@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/main/tile162.png" type="Texture" id=1]
+[ext_resource path="res://assets/main/tile149.png" type="Texture" id=1]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemies/Zombie.gd" type="Script" id=3]
+[ext_resource path="res://Enemies/Ghosts.gd" type="Script" id=3]
 [ext_resource path="res://Enemies/PlayerDetectionZone.gd" type="Script" id=4]
 [ext_resource path="res://Areas/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ProgressBar/over.png" type="Texture" id=6]
@@ -23,9 +23,9 @@ extents = Vector2( 4.5, 5 )
 [sub_resource type="CircleShape2D" id=5]
 radius = 24.0208
 
-[node name="Zombie" type="KinematicBody2D"]
+[node name="Ghosts" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 61
+collision_mask = 60
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -41,7 +41,7 @@ script = ExtResource( 4 )
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
-max_health = 10
+max_health = 14
 
 [node name="Hurtbox" parent="." instance=ExtResource( 8 )]
 collision_mask = 15
@@ -56,13 +56,13 @@ margin_right = 58.0
 margin_bottom = 3.0
 rect_scale = Vector2( 0.2, 0.2 )
 max_value = 10.0
-value = 5.0
+value = 10.0
 texture_under = ExtResource( 7 )
 texture_progress = ExtResource( 6 )
 
 [node name="Hitbox" parent="." groups=["ZombieHitbox"] instance=ExtResource( 5 )]
 script = ExtResource( 9 )
-damage = 4
+damage = 8
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 5 )

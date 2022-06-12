@@ -81,7 +81,7 @@ texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )
 
 [node name="RegenTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="PotionLength" type="Timer" parent="."]
