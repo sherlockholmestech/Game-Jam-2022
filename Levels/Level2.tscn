@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/main/tile032.png" type="Texture" id=1]
 [ext_resource path="res://assets/main/tile017.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/Darkness/light.png" type="Texture" id=19]
 [ext_resource path="res://assets/Music/Dissonance.wav" type="AudioStream" id=20]
 [ext_resource path="res://Levels/Ambient.gd" type="Script" id=21]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -325,6 +326,8 @@ script = ExtResource( 21 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ambient"]
 anims/RESET = SubResource( 11 )
 anims/fade = SubResource( 10 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 22 )]
 
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
 [connection signal="portal_entered" from="Portal" to="Ambient" method="_on_Portal_portal_entered"]

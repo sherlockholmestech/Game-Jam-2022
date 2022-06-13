@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Fonts/Font2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://RichTextTransparent.tres" type="Theme" id=2]
+[ext_resource path="res://Theme.theme" type="Theme" id=3]
+[ext_resource path="res://assets/main/tile162.png" type="Texture" id=4]
+[ext_resource path="res://PauseMenu.gd" type="Script" id=5]
+[ext_resource path="res://assets/main/tile149.png" type="Texture" id=6]
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.152941, 0.643137, 0.4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
+margin_left = 96.0
+margin_top = 24.0
+margin_right = 224.0
+margin_bottom = 64.0
+mouse_filter = 2
+theme = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Game Paused"
+
+[node name="Resume" type="Button" parent="Pause"]
+margin_left = 128.0
+margin_top = 80.0
+margin_right = 192.0
+margin_bottom = 100.0
+theme = ExtResource( 3 )
+text = "RESUME"
+icon = ExtResource( 4 )
+
+[node name="Quit" type="Button" parent="Pause"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 148.0
+theme = ExtResource( 3 )
+text = "QUIT"
+icon = ExtResource( 6 )
+
+[connection signal="pressed" from="Pause/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/Quit" to="." method="_on_Quit_pressed"]

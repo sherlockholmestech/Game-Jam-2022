@@ -1,5 +1,4 @@
 extends Tween
-onready var tween_out = get_node("Tween")
 
 export var transition_duration = 1.00
 export var transition_type = 1 # TRANS_SINE
