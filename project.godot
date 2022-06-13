@@ -18,7 +18,6 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 PlayerData="*res://Player/PlayerData.tscn"
-FadeOutMusic="*res://Transitions/FadeOutMusic.tscn"
 
 [display]
 
