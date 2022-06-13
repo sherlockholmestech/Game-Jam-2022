@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
 [ext_resource path="res://Theme.theme" type="Theme" id=3]
 [ext_resource path="res://assets/main/tile132.png" type="Texture" id=4]
-[ext_resource path="res://assets/Music/Dissonance.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Music/Keynote.wav" type="AudioStream" id=5]
 [ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/main/tile149.png" type="Texture" id=7]
+[ext_resource path="res://assets/Fonts/Font2.tres" type="DynamicFont" id=8]
+[ext_resource path="res://RichTextTransparent.tres" type="Theme" id=9]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -83,18 +85,26 @@ theme = ExtResource( 3 )
 text = "QUIT"
 icon = ExtResource( 7 )
 
-[node name="Dissonance" type="AudioStreamPlayer" parent="."]
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
 bus = "Ambient"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dissonance"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ambient"]
 anims/RESET = SubResource( 5 )
 anims/fade = SubResource( 6 )
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 6 )]
 margin_right = 320.0
 margin_bottom = 180.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 80.0
+margin_right = 256.0
+margin_bottom = 40.0
+theme = ExtResource( 9 )
+custom_fonts/normal_font = ExtResource( 8 )
+text = "A Sinister Time"
 
 [connection signal="pressed" from="Play" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
