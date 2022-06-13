@@ -7,7 +7,6 @@ export var FRICTION = 500
 var currentarea
 var currentdamage
 onready var stats = $Stats
-onready var timer = $Timer
 onready var regentimer = $RegenTimer
 signal die_screen
 signal died

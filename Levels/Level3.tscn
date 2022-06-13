@@ -282,20 +282,11 @@ position = Vector2( 104, 56 )
 [node name="Ghosts2" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 80, 136 )
 
-[node name="Ghosts3" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 208, 120 )
-
-[node name="Ghosts4" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 200, 208 )
-
 [node name="Zombie" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 168, 56 )
 
 [node name="Zombie2" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 120, 200 )
-
-[node name="Zombie3" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 104, 96 )
 
 [node name="BabyZombie" parent="Enemies" instance=ExtResource( 14 )]
 position = Vector2( 152, 136 )
@@ -343,6 +334,7 @@ anims/RESET = SubResource( 10 )
 anims/fade = SubResource( 11 )
 
 [connection signal="portal_entered" from="Portal" to="SafePlace" method="_on_Portal_portal_entered"]
+[connection signal="portal_entered" from="Portal" to="Ambient" method="_on_Portal_portal_entered"]
 [connection signal="timeout" from="SafePlace/Timer" to="Player" method="_on_Timer_timeout"]
 [connection signal="die_screen" from="Player" to="Died" method="_on_Player_die_screen"]
 [connection signal="body_entered" from="SpeedPotion" to="Player" method="_on_SpeedPotion_body_entered"]
