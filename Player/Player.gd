@@ -72,6 +72,10 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 		stats.health -= area.damage
 		currentdamage = area.damage
 		$DamageTimer.start()
+	if area.is_in_group("FlameHitbox"):
+		PlayerData.isonfire = true
+		if PlayerData.isonfire:
+			fire_damage()
 	else:
 		currentarea = null
 		
@@ -105,14 +109,33 @@ func _on_PotionLength_timeout() -> void:
 
 
 func _on_Hitbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("FlameHitbox"):
+		PlayerData.isonfire = false
 	if area.is_in_group("ZombieHitbox"):
 		yield(get_tree().create_timer(2), "timeout")
 		$DamageTimer.stop()
 		currentarea = null
-
+	
 
 func _on_DamageTimer_timeout() -> void:
 	if not currentarea == null:
 		$Damage.play(0)
 		stats.health -= currentdamage
-		print(stats.health)
+
+func fire_damage():
+	$Damage.play()
+	$AnimatedSprite.visible = true
+	$AnimatedSprite.play("Animate")
+	stats.health -= 1
+	yield(get_tree().create_timer(2), "timeout")
+	$Damage.play()
+	$AnimatedSprite.play("Animate")
+	stats.health -= 1
+	yield(get_tree().create_timer(2), "timeout")
+	$Damage.play()
+	$AnimatedSprite.play("Animate")
+	stats.health -= 1
+	yield(get_tree().create_timer(2), "timeout")
+	$AnimatedSprite.visible = false
+	PlayerData.isonfire = false
+	

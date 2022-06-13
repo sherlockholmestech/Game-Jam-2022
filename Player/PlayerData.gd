@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var isonfire = false
 
 
 func _process(delta: float) -> void:
@@ -9,6 +10,4 @@ func _process(delta: float) -> void:
 		$CanvasLayer/Label.text = "Score: %s" % score
 	else:
 		$CanvasLayer/Label.visible = false
-
-
 
