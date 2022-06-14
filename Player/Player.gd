@@ -156,7 +156,6 @@ func _on_FreezePotion_body_entered(body: Node) -> void:
 		freeze = true
 		pause_mode = Node.PAUSE_MODE_PROCESS
 		$EffectIco/Freeze.visible = true
-		print(freeze)
 		get_tree().paused = freeze
 		$Freeze.start()
 
@@ -166,5 +165,4 @@ func _on_Freeze_timeout() -> void:
 	freeze = false
 	pause_mode = Node.PAUSE_MODE_INHERIT
 	$EffectIco/Freeze.visible = false
-	print(freeze)
 	get_tree().paused = freeze
