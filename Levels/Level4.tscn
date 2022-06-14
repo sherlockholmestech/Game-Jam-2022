@@ -306,7 +306,7 @@ position = Vector2( 32, 24 )
 [node name="RemoteTransform2D" parent="Player" index="0"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="AnimatedSprite" parent="Player" index="11"]
+[node name="AnimatedSprite" parent="Player" index="12"]
 frame = 2
 
 [node name="BarrierBlock" parent="." instance=ExtResource( 12 )]
