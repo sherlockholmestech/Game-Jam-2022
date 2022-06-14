@@ -17,4 +17,8 @@ func _on_Resume_pressed() -> void:
 
 
 func _on_Quit_pressed() -> void:
+	$Pause/ViewportContainer/ConfirmationDialog.visible = true
+
+
+func _on_ConfirmationDialog_confirmed() -> void:
 	get_tree().quit()

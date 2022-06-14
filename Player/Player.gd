@@ -6,6 +6,7 @@ export var ROLL_SPEED = 125
 export var FRICTION = 500
 var currentarea
 var currentdamage
+var deductaccel
 onready var stats = $Stats
 onready var regentimer = $RegenTimer
 signal die_screen
@@ -96,14 +97,18 @@ func _on_RegenTimer_timeout() -> void:
 
 func _on_SpeedPotion_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		ACCELERATION = ACCELERATION + 500
-		MAX_SPEED = MAX_SPEED + 100
+		ACCELERATION = ACCELERATION + 200
+		MAX_SPEED = MAX_SPEED + 50
 		$PotionLength.start()
+		deductaccel = true
 
 
 func _on_PotionLength_timeout() -> void:
-	ACCELERATION = ACCELERATION - 500
-	MAX_SPEED = MAX_SPEED - 100
+	if deductaccel:
+		self.ACCELERATION = ACCELERATION - 200
+		self.MAX_SPEED = MAX_SPEED - 50
+		deductaccel = false
+		
 
 
 

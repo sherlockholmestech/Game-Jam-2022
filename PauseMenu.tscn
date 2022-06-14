@@ -51,5 +51,23 @@ theme = ExtResource( 3 )
 text = "QUIT"
 icon = ExtResource( 6 )
 
+[node name="ViewportContainer" type="ViewportContainer" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Pause/ViewportContainer"]
+visible = true
+margin_left = 104.0
+margin_top = 72.0
+margin_right = 328.0
+margin_bottom = 142.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 3 )
+window_title = "Please Confirm"
+dialog_text = "Are you sure to quit the game?"
+
 [connection signal="pressed" from="Pause/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Pause/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="confirmed" from="Pause/ViewportContainer/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

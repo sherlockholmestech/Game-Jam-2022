@@ -107,6 +107,7 @@ margin_bottom = -4.0
 theme = SubResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ViewportContainer/TabContainer/Licence"]
+margin_left = -4.0
 margin_top = -5.0
 margin_right = 636.0
 margin_bottom = 299.0
