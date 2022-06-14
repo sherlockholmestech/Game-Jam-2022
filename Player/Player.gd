@@ -29,14 +29,14 @@ func move_state(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	
-	
+
+
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 		velocity = velocity.clamped(MAX_SPEED)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	
+
 	if velocity.x < 0:
 		$Sprite.flip_h = true
 	if velocity.x > 0:
@@ -44,11 +44,12 @@ func move_state(delta):
 	else:
 		pass
 	move()
-	
+
 func move():
 	velocity = move_and_slide(velocity)
 
 func die():
+	PlayerData.died += 1
 	queue_free()
 	var deathEffect = DeathEffect.instance()
 	get_parent().add_child(deathEffect)
@@ -56,9 +57,6 @@ func die():
 	emit_signal("died")
 	emit_signal("die_screen")
 	PlayerData.score = 0
-	
-	
-	
 
 
 func _on_Timer_timeout() -> void:
@@ -68,7 +66,7 @@ func _on_Timer_timeout() -> void:
 func _on_Stats_no_health() -> void:
 	die()
 
-	
+
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ZombieHitbox"):
@@ -83,7 +81,7 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 			fire_damage()
 	else:
 		currentarea = null
-		
+
 
 
 
@@ -115,7 +113,7 @@ func _on_PotionLength_Speed_timeout() -> void:
 		self.ACCELERATION = ACCELERATION - 200
 		self.MAX_SPEED = MAX_SPEED - 50
 		deductaccel = false
-		
+
 
 
 
@@ -126,7 +124,7 @@ func _on_Hitbox_area_exited(area: Area2D) -> void:
 		yield(get_tree().create_timer(2), "timeout")
 		$DamageTimer.stop()
 		currentarea = null
-	
+
 
 func _on_DamageTimer_timeout() -> void:
 	if not currentarea == null:
@@ -149,7 +147,7 @@ func fire_damage():
 	yield(get_tree().create_timer(2), "timeout")
 	$AnimatedSprite.visible = false
 	PlayerData.isonfire = false
-	
+
 
 
 func _on_FreezePotion_body_entered(body: Node) -> void:

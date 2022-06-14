@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	else:
 		finalscore = 0
 	$FinalScore.text = "Final Score: " + str(finalscore)
-	if finalscore >= 100:
+	if finalscore >= 550:
 		$Success.text = "You Passed!"
 	else:
-		$Success.text = "You Failed!"
+		$Success.text = "You Failed!  A minimum score of 550 is needed to pass!"

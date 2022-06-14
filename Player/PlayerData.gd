@@ -16,7 +16,7 @@ var showscore = true
 func _ready() -> void:
 	timer_on = true
 	$CanvasLayer/Time.clear()
-	
+
 func _process(delta: float) -> void:
 	print(died)
 	if levelup == false:
@@ -52,7 +52,7 @@ func level_calc(level):
 	$CanvasLayer/Time.visible = false
 	print(totaltime)
 
-func die_calc(level):
+func die_calc(died):
 	timer_on = false
 	totaltime += time_elapsed
 	$CanvasLayer/Time.clear()
