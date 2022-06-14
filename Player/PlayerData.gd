@@ -2,6 +2,7 @@ extends Node
 
 var score = 0
 var isonfire = false
+var isfrozen = false
 
 
 func _process(delta: float) -> void:

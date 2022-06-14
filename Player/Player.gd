@@ -7,6 +7,7 @@ export var FRICTION = 500
 var currentarea
 var currentdamage
 var deductaccel
+var freeze
 onready var stats = $Stats
 onready var regentimer = $RegenTimer
 signal die_screen
@@ -15,6 +16,9 @@ signal died
 const DeathEffect = preload("res://Effects/DeathEffect.tscn")
 
 var velocity = Vector2.ZERO
+
+func _ready() -> void:
+	pause_mode = Node.PAUSE_MODE_INHERIT
 
 func _physics_process(delta: float) -> void:
 	$TextureProgress.value = stats.health
@@ -97,14 +101,16 @@ func _on_RegenTimer_timeout() -> void:
 
 func _on_SpeedPotion_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
+		$EffectIco/Speed.visible = true
 		ACCELERATION = ACCELERATION + 200
 		MAX_SPEED = MAX_SPEED + 50
 		$PotionLength.start()
 		deductaccel = true
 
 
-func _on_PotionLength_timeout() -> void:
+func _on_PotionLength_Speed_timeout() -> void:
 	if deductaccel:
+		$EffectIco/Speed.visible = false
 		self.ACCELERATION = ACCELERATION - 200
 		self.MAX_SPEED = MAX_SPEED - 50
 		deductaccel = false
@@ -143,3 +149,23 @@ func fire_damage():
 	$AnimatedSprite.visible = false
 	PlayerData.isonfire = false
 	
+
+
+func _on_FreezePotion_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		PlayerData.isfrozen = true
+		freeze = true
+		pause_mode = Node.PAUSE_MODE_PROCESS
+		$EffectIco/Freeze.visible = true
+		print(freeze)
+		get_tree().paused = freeze
+		$Freeze.start()
+
+
+func _on_Freeze_timeout() -> void:
+	PlayerData.isfrozen = false
+	freeze = false
+	pause_mode = Node.PAUSE_MODE_INHERIT
+	$EffectIco/Freeze.visible = false
+	print(freeze)
+	get_tree().paused = freeze

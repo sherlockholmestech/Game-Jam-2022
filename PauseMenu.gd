@@ -8,12 +8,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func set_is_paused(value):
 	ispaused = value
-	get_tree().paused = ispaused
+	if not PlayerData.isfrozen:
+		get_tree().paused = ispaused
 	$Pause.visible = ispaused
 
+func _process(delta: float) -> void:
+	if not PlayerData.isfrozen:
+		get_tree().paused = ispaused
 
 func _on_Resume_pressed() -> void:
-	self.ispaused = false
+		self.ispaused = false
 
 
 func _on_Quit_pressed() -> void:

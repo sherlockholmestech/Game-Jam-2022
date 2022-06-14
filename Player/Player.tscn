@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/main/tile132.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/ProgressBar/Bottom.png" type="Texture" id=9]
 [ext_resource path="res://assets/SoundEffects/damage2.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/Fire/Fire.png" type="Texture" id=11]
+[ext_resource path="res://assets/PotionIcons/speed.png" type="Texture" id=12]
+[ext_resource path="res://assets/PotionIcons/frozen.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 6.5 )
@@ -109,7 +111,12 @@ wait_time = 5.0
 autostart = true
 
 [node name="PotionLength" type="Timer" parent="."]
+pause_mode = 2
 wait_time = 10.0
+
+[node name="Freeze" type="Timer" parent="."]
+pause_mode = 2
+wait_time = 5.0
 
 [node name="Damage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
@@ -125,12 +132,28 @@ position = Vector2( 0, -1 )
 frames = SubResource( 8 )
 animation = "Animate"
 
+[node name="EffectIco" type="YSort" parent="."]
+pause_mode = 2
+
+[node name="Speed" type="Sprite" parent="EffectIco"]
+visible = false
+position = Vector2( -4, -16 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 12 )
+
+[node name="Freeze" type="Sprite" parent="EffectIco"]
+visible = false
+position = Vector2( 1, -16 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 13 )
+
 [connection signal="timeout" from="Swordpos/Timer" to="Swordpos" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_RegenTimer_timeout"]
-[connection signal="timeout" from="PotionLength" to="." method="_on_PotionLength_timeout"]
+[connection signal="timeout" from="PotionLength" to="." method="_on_PotionLength_Speed_timeout"]
+[connection signal="timeout" from="Freeze" to="." method="_on_Freeze_timeout"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
 
 [editable path="Hitbox"]
