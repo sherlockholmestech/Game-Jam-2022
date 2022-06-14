@@ -1,5 +1,6 @@
 extends Node
 
+var pausemenu = false
 var timer_on = true
 var score = 0
 var isonfire = false
@@ -10,17 +11,21 @@ var formattedtime
 var levelup = false
 var level = 0 setget level_calc
 var died = 0 setget die_calc
+var showscore = true
 
 func _ready() -> void:
 	timer_on = true
 	$CanvasLayer/Time.clear()
 	
 func _process(delta: float) -> void:
+	print(died)
 	if levelup == false:
 		formattedtime = _format_seconds(time_elapsed, false)
 	if timer_on:
 		time_elapsed += delta
-	if score > 0:
+	else:
+		pass
+	if score > 0 and showscore:
 		$CanvasLayer/Score.visible = true
 		$CanvasLayer/Score.text = "Score: %s" % score
 	else:
@@ -48,4 +53,8 @@ func level_calc(level):
 	print(totaltime)
 
 func die_calc(level):
-	pass
+	timer_on = false
+	totaltime += time_elapsed
+	$CanvasLayer/Time.clear()
+	$CanvasLayer/Time.visible = false
+	print(totaltime)

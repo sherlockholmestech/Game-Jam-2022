@@ -267,6 +267,7 @@ texture_scale = 0.1
 
 [node name="Portal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 72, 248 )
+target_scene = "res://EndScreen.tscn"
 
 [node name="SafePlace" parent="." instance=ExtResource( 7 )]
 wait_time = 26

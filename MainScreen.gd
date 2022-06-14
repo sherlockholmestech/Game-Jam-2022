@@ -2,7 +2,8 @@ extends Control
 
 onready var _transition_rect := $SceneTransitionRect
 
-
+func _ready() -> void:
+	PlayerData.timer_on = false
 
 func _on_Button_pressed() -> void:
 	$Ambient/AnimationPlayer.play("fade")

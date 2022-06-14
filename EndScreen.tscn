@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://EndScreen.gd" type="Script" id=1]
+[ext_resource path="res://RichTextTransparent.tres" type="Theme" id=2]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 184.0
+color = Color( 0.196078, 0.0862745, 0.588235, 1 )
+
+[node name="TheEnd\?\?\?" type="RichTextLabel" parent="."]
+margin_left = 88.0
+margin_top = 7.0
+margin_right = 240.0
+margin_bottom = 47.0
+theme = ExtResource( 2 )
+text = "You made it to the end!  But, did you succeed?  Let's find out!"
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 88.0
+margin_top = 55.0
+margin_right = 312.0
+margin_bottom = 71.0
+theme = ExtResource( 2 )
+
+[node name="Time" type="RichTextLabel" parent="."]
+margin_left = 88.0
+margin_top = 79.0
+margin_right = 312.0
+margin_bottom = 95.0
+theme = ExtResource( 2 )
+
+[node name="FinalScore" type="RichTextLabel" parent="."]
+margin_left = 88.0
+margin_top = 104.0
+margin_right = 312.0
+margin_bottom = 120.0
+theme = ExtResource( 2 )
+
+[node name="Success" type="RichTextLabel" parent="."]
+margin_left = 88.0
+margin_top = 129.0
+margin_right = 312.0
+margin_bottom = 145.0
+theme = ExtResource( 2 )

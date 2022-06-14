@@ -5,6 +5,7 @@ var ispaused = false setget set_is_paused
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		self.ispaused = !ispaused
+		PlayerData.pausemenu = ispaused
 
 func set_is_paused(value):
 	ispaused = value
