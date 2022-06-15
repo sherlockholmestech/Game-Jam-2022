@@ -1,5 +1,6 @@
 extends Node
 
+var username
 var pausemenu = false
 var timer_on = true
 var score = 0

@@ -257,6 +257,8 @@ target_scene = "res://Levels/Level1.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 24, 24 )
+ACCELERATION = 800
+MAX_SPEED = 100
 
 [node name="RemoteTransform2D" parent="Player" index="0"]
 remote_path = NodePath("../../Camera2D")

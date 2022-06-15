@@ -106,8 +106,39 @@ theme = ExtResource( 9 )
 custom_fonts/normal_font = ExtResource( 8 )
 text = "A Sinister Time"
 
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_left = 88.0
+margin_top = 56.0
+margin_right = 280.0
+margin_bottom = 131.0
+rect_scale = Vector2( 0.75, 0.75 )
+theme = ExtResource( 3 )
+window_title = "Username"
+
+[node name="LineEdit" type="LineEdit" parent="WindowDialog"]
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 183.0
+margin_bottom = 39.0
+theme = ExtResource( 3 )
+
+[node name="Ok" type="Button" parent="WindowDialog"]
+margin_left = 64.0
+margin_top = 53.3333
+margin_right = 128.0
+margin_bottom = 68.3333
+text = "OK"
+
+[node name="Label" type="Label" parent="WindowDialog"]
+margin_top = 21.3333
+margin_right = 57.4
+margin_bottom = 38.7333
+text = "Username:"
+
 [connection signal="pressed" from="Play" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="WindowDialog/Ok" to="." method="_on_Ok_pressed"]
 
 [editable path="SceneTransitionRect"]
