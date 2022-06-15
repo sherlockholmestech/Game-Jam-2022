@@ -25,12 +25,12 @@ margin_bottom = 184.0
 color = Color( 0.929412, 0.368627, 0.368627, 0.427451 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UI"]
-margin_left = 144.0
+margin_left = 138.0
 margin_top = 64.0
-margin_right = 208.0
+margin_right = 202.0
 margin_bottom = 80.0
 theme = ExtResource( 3 )
-text = "You Died!"
+text = "You Failed!"
 
 [node name="Time" type="RichTextLabel" parent="CanvasLayer/UI"]
 margin_left = 136.0

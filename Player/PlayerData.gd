@@ -1,5 +1,7 @@
 extends Node
 
+var currenthighscore
+var scorepath = "user://high_scores.dat"
 var username
 var pausemenu = false
 var timer_on = true
@@ -13,6 +15,9 @@ var levelup = false
 var level = 0 setget level_calc
 var died = 0 setget die_calc
 var showscore = true
+var playergamedata = {
+}
+var highscoredata
 
 func _ready() -> void:
 	timer_on = true
@@ -56,3 +61,21 @@ func die_calc(died):
 	totaltime += time_elapsed
 	$CanvasLayer/Time.clear()
 	$CanvasLayer/Time.visible = false
+
+func savefile():
+	var file = File.new()
+	var error = file.open(scorepath, File.WRITE)
+	print(error)
+	if error == OK:
+		print(error)
+		file.store_var(playergamedata)
+		file.close()
+
+func loadfile():
+	var file = File.new()
+	if file.file_exists(scorepath):
+		var error = file.open(scorepath, File.READ)
+		if error == OK:
+			print(error)
+			highscoredata = file.get_var()
+		file.close()

@@ -16,8 +16,22 @@ func _process(delta: float) -> void:
 		finalscore = finalscore / PlayerData.totaltime
 	else:
 		finalscore = 0
+	PlayerData.playergamedata = {
+		"Username" : PlayerData.username,
+		"Score" : finalscore
+}
+	var isfile = File.new()
+	if not isfile.file_exists(PlayerData.scorepath):
+		PlayerData.savefile()
+	PlayerData.loadfile()
+	if PlayerData.highscoredata["Score"] < finalscore:
+		PlayerData.savefile()
+		PlayerData.currenthighscore = PlayerData.playergamedata
+	else:
+		PlayerData.currenthighscore = PlayerData.highscoredata
 	$FinalScore.text = "Final Score: " + str(finalscore)
-	if finalscore >= 550:
+	if finalscore >= 200:
 		$Success.text = "You Passed!"
 	else:
-		$Success.text = "You Failed!  A minimum score of 550 is needed to pass!"
+		$Success.text = "You Failed!  A minimum score of 200 is needed to pass!"
+	$HighScore.text = "Current High Score:\nUsername: " + str(PlayerData.currenthighscore["Username"]) + "\nScore: " + str(PlayerData.currenthighscore["Score"])
