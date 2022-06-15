@@ -57,6 +57,7 @@ func die():
 	emit_signal("died")
 	emit_signal("die_screen")
 	PlayerData.score = 0
+	PlayerData.time_elapsed = 0
 
 
 func _on_Timer_timeout() -> void:

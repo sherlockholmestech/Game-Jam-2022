@@ -107,7 +107,6 @@ custom_fonts/normal_font = ExtResource( 8 )
 text = "A Sinister Time"
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
-visible = true
 margin_left = 88.0
 margin_top = 56.0
 margin_right = 280.0

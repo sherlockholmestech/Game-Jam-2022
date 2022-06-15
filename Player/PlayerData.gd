@@ -55,19 +55,20 @@ func level_calc(level):
 	totaltime += time_elapsed
 	$CanvasLayer/Time.clear()
 	$CanvasLayer/Time.visible = false
+	print(totaltime)
 
 func die_calc(died):
 	timer_on = false
 	totaltime += time_elapsed
 	$CanvasLayer/Time.clear()
 	$CanvasLayer/Time.visible = false
+	print(totaltime)
 
 func savefile():
 	var file = File.new()
 	var error = file.open(scorepath, File.WRITE)
 	print(error)
 	if error == OK:
-		print(error)
 		file.store_var(playergamedata)
 		file.close()
 
@@ -76,6 +77,5 @@ func loadfile():
 	if file.file_exists(scorepath):
 		var error = file.open(scorepath, File.READ)
 		if error == OK:
-			print(error)
 			highscoredata = file.get_var()
 		file.close()
