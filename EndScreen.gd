@@ -35,3 +35,7 @@ func _process(delta: float) -> void:
 	else:
 		$Success.text = "You Failed!  A minimum score of 200 is needed to pass!"
 	$HighScore.text = "Current High Score:\nUsername: " + str(PlayerData.currenthighscore["Username"]) + "\nScore: " + str(PlayerData.currenthighscore["Score"])
+
+
+func _on_Button_pressed() -> void:
+	get_tree().quit()

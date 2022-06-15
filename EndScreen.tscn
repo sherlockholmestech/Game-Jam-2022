@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://EndScreen.gd" type="Script" id=1]
 [ext_resource path="res://RichTextTransparent.tres" type="Theme" id=2]
+[ext_resource path="res://Theme.theme" type="Theme" id=3]
+[ext_resource path="res://assets/main/tile149.png" type="Texture" id=4]
 
 [node name="EndScreen" type="Control"]
 anchor_right = 1.0
@@ -55,3 +57,14 @@ margin_top = 8.0
 margin_right = 320.0
 margin_bottom = 48.0
 theme = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 155.0
+margin_right = 192.0
+margin_bottom = 175.0
+theme = ExtResource( 3 )
+text = "QUIT"
+icon = ExtResource( 4 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
