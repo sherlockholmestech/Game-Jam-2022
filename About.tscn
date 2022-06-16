@@ -90,9 +90,9 @@ margin_bottom = 305.0
 theme = ExtResource( 1 )
 text = "Lead developer, music composer:  Sherlock Holmes
 
-The man who helped me generate ideas and helped me balance my game: Bombybomb
+The man who helped me generate ideas wrote the end poem: Bombybomb
 
-The guy with millions of wild suggestions: Ok™
+The guy who gave me even more ideas: OK(tm)
 
 Special thanks to the Godot team for making this possible."
 
@@ -828,6 +828,8 @@ Music: Sherlock Holmes
 Fonts: itch.io
 Cursors: itch.io
 Lighting effect: Godot Documentation
+Ideas, ideas, and more ideas: OK(tm), Bombybomb
+End poem: Bomby2
 
 Thank you to the following software teams for providing the software that I used:
 
@@ -836,7 +838,7 @@ The LibreSprite team
 The LMMS team
 The MuseScore team
 The Audacity team
-The Visual Studio Code team"
+The Atom team (RIP)"
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 4 )]
 margin_right = 640.0
