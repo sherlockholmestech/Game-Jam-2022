@@ -4,6 +4,7 @@ var scoretext
 
 func _on_Button_pressed() -> void:
 	$CanvasLayer/UI.visible = false
+	PlayerData.timer_on = true
 	get_tree().reload_current_scene()
 
 

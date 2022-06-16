@@ -167,3 +167,15 @@ func _on_Freeze_timeout() -> void:
 	pause_mode = Node.PAUSE_MODE_INHERIT
 	$EffectIco/Freeze.visible = false
 	get_tree().paused = freeze
+
+
+func _on_PoisonPotion_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		var i = 0
+		while i <= 10:
+			$EffectIco/Poison.visible = true
+			$Damage.play()
+			stats.health -= 1
+			i += 1
+			yield(get_tree().create_timer(1), "timeout")
+			$EffectIco/Poison.visible = false
