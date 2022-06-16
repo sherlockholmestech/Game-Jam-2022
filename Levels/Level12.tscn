@@ -300,17 +300,8 @@ position = Vector2( 328, -8 )
 [node name="Ghosts" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 216, 40 )
 
-[node name="Ghosts2" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 216, -8 )
-
 [node name="Ghosts3" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 240, -72 )
-
-[node name="Ghosts4" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 160, 32 )
-
-[node name="Ghosts5" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 152, -48 )
 
 [node name="Flames" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 40, 120 )
@@ -321,20 +312,11 @@ position = Vector2( 40, -24 )
 [node name="Flames3" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 328, 104 )
 
-[node name="Flames4" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 248, 136 )
-
 [node name="Flames5" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 168, 200 )
 
-[node name="Flames6" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 168, 288 )
-
 [node name="Flames7" parent="Enemies" instance=ExtResource( 21 )]
 position = Vector2( 56, 288 )
-
-[node name="Flames8" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 336, 296 )
 
 [node name="BabyZombie" parent="Enemies" instance=ExtResource( 14 )]
 position = Vector2( 296, 184 )
@@ -345,23 +327,8 @@ position = Vector2( 8, 232 )
 [node name="BabyZombie3" parent="Enemies" instance=ExtResource( 14 )]
 position = Vector2( 120, 176 )
 
-[node name="BabyZombie4" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 256, 296 )
-
-[node name="BabyZombie5" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 360, 224 )
-
-[node name="BabyZombie6" parent="Enemies" instance=ExtResource( 14 )]
-position = Vector2( 120, 80 )
-
 [node name="Ghosts6" parent="Enemies" instance=ExtResource( 20 )]
 position = Vector2( 168, 104 )
-
-[node name="Ghosts7" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 40, 96 )
-
-[node name="Flames9" parent="Enemies" instance=ExtResource( 21 )]
-position = Vector2( 88, 88 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 32, 24 )
