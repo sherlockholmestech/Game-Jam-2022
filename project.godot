@@ -14,6 +14,8 @@ config/name="A Sinister Time (RI Game Jam 2022)"
 run/main_scene="res://MainScreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="ASinisterTime"
+boot_splash/image="res://Loading.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 
