@@ -788,7 +788,6 @@ Public License instead of this License.  But first, please read
 "
 
 [node name="Credits" type="Tabs" parent="ViewportContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -829,7 +828,7 @@ Fonts: itch.io
 Cursors: itch.io
 Lighting effect: Godot Documentation
 Ideas, ideas, and more ideas: OK(tm), Bombybomb
-End poem: Bomby2
+End poem: Bombybomb
 
 Thank you to the following software teams for providing the software that I used:
 

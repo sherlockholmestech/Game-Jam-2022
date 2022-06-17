@@ -95,7 +95,7 @@ position = Vector2( 0, 0.5 )
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
-max_health = 30
+max_health = 28
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 margin_left = -6.0
