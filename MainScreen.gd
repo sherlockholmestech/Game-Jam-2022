@@ -28,3 +28,7 @@ func _on_Ok_pressed() -> void:
 	$Ambient/AnimationPlayer.play("fade")
 	yield(get_tree().create_timer(1), "timeout")
 	_transition_rect.transition_to("res://Levels/Introduction.tscn")
+
+
+func _on_HighScore_pressed() -> void:
+	_transition_rect.transition_to("res://HighScore.tscn")

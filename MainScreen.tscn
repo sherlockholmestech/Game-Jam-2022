@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/main/tile149.png" type="Texture" id=7]
 [ext_resource path="res://assets/Fonts/Font2.tres" type="DynamicFont" id=8]
 [ext_resource path="res://RichTextTransparent.tres" type="Theme" id=9]
+[ext_resource path="res://assets/main/tile231.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Eighty-Four.ttf"
@@ -69,12 +70,21 @@ icon = ExtResource( 2 )
 
 [node name="About" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 96.0
+margin_top = 84.0
 margin_right = 192.0
-margin_bottom = 116.0
+margin_bottom = 104.0
 theme = ExtResource( 3 )
 text = "ABOUT"
 icon = ExtResource( 4 )
+
+[node name="HighScore" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 112.0
+margin_right = 201.0
+margin_bottom = 132.0
+theme = ExtResource( 3 )
+text = "HIGH SCORE"
+icon = ExtResource( 10 )
 
 [node name="Quit" type="Button" parent="."]
 margin_left = 128.0
@@ -137,6 +147,7 @@ text = "Username:"
 
 [connection signal="pressed" from="Play" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="HighScore" to="." method="_on_HighScore_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="WindowDialog/Ok" to="." method="_on_Ok_pressed"]
 

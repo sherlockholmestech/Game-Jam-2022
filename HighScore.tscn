@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://RichTextTransparent.tres" type="Theme" id=1]
+[ext_resource path="res://Transitions/SceneChanger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HighScore.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Theme.theme" type="Theme" id=5]
+
+[node name="HighScore" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.180392, 0.0666667, 0.435294, 1 )
+
+[node name="HighScore" type="RichTextLabel" parent="."]
+margin_left = 128.0
+margin_top = 58.0
+margin_right = 320.0
+margin_bottom = 130.0
+theme = ExtResource( 1 )
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 104.0
+margin_top = 152.0
+margin_right = 216.0
+margin_bottom = 174.0
+theme = ExtResource( 5 )
+text = "MAIN MENU"
+icon = ExtResource( 4 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
