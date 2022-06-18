@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1655481816.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Why is this so dark?"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You only have a small light to guide your way.  You must spend your limited time out of the safe zone wisely, be it to explore or hunt down enemies."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This is very easy.  There are even more difficult levels waiting for you."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655547187.json",
+		"name": "Level 1"
+	}
+}

@@ -49,6 +49,44 @@
 			"text": "There are many more elements that you will have to find out for yourself.  Have fun."
 		},
 		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Are you ready?"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good.  Wish you the best of luck."
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Too bad. you have no other choice."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
 			"character": "character-1655481816.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
