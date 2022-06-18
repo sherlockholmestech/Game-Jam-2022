@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Last level and you are done!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655548651.json",
+		"name": "Level 12"
+	}
+}

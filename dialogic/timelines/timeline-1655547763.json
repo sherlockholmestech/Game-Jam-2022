@@ -1,0 +1,83 @@
+{
+	"events": [
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "See those fountain-like structures on the wall?"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Holy, this man is cheating!  Off to the guillotine you go!"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Don't worry, you will see them later."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Those can give you one of the following special effects: poison, speed or freezing."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Poison makes you take consistent damage for 10 seconds."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Speed makes you move faster for 10 seconds."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Freeze will freeze everything in their tracks for 5 seconds (except for you).  During this time, you canot attack enemies."
+		},
+		{
+			"character": "character-1655481816.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How do I know which gives which effect?"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Exactly.  You can't.  You need to take risks, young man!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655547763.json",
+		"name": "Level 2"
+	}
+}

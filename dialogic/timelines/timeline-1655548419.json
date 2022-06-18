@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Things are gonna get confusing from here!  Have fun!"
+		},
+		{
+			"character": "character-1655481816.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "God, can you give me some hints please?"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#28214f]God quietly leaves[/color]"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655548419.json",
+		"name": "Level 5"
+	}
+}
