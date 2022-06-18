@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	time = str(PlayerData.totaltime)
 	$Score.text = "Initial Score: " + str(PlayerData.score)
 	$Time.text = "Time Taken (seconds) : " + time
-	finalscore = PlayerData.score * 400
+	finalscore = PlayerData.score * 800
 	if not finalscore <= 0 or not PlayerData.totaltime <= 0:
 		finalscore = finalscore / PlayerData.totaltime
 	else:
