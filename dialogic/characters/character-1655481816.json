@@ -1,0 +1,21 @@
+{
+	"color": "#fff19a6a",
+	"description": "This is you.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1655481816.json",
+	"mirror_portraits": false,
+	"name": "You",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/main/tile132.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

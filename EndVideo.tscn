@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 1 )
 autoplay = true
+buffering_msec = 600
 
 [node name="SceneTransitionRect" parent="." instance=ExtResource( 3 )]
 

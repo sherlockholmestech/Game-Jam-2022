@@ -1,0 +1,69 @@
+{
+	"events": [
+		{
+			"character": "character-1655481816.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Where am I?  What is this place?"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have sinned.  You have now been teleported to the past."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You must prove worthy of mortality by passing the ultimate test, fighting your way to the present."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But, beware!  There are many obstacles in your way to the modern world!  This journey will not be as easy as you think it will be."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Enemies with special abilities will try to harm you!  Do stay safe!"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "For each level, you have a safe zone, denotated by flashy green blocks.  You have a limited time outside of the safe zone.  If you reach the limit, you fail."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "A purple portal will bring you to your next challenge."
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "There are many more elements that you will have to find out for yourself.  Have fun."
+		},
+		{
+			"character": "character-1655481816.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ok, sure.  Where do I begin my journey?"
+		},
+		{
+			"character": "character-1655481862.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You will find the portal to your first challenge to the right."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1655482005.json",
+		"name": "Introduction"
+	}
+}

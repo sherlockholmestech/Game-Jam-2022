@@ -17,6 +17,7 @@ func _on_Portal_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		emit_signal("portal_entered")
 		PlayerData.level = PlayerData.level + 1
+		$Effect.play()
 		yield(get_tree().create_timer(1.2), "timeout")
 		next_level()
 	else:

@@ -1,6 +1,7 @@
 extends Node
 
 var currenthighscore
+var showfps = true
 var scorepath = "user://high_scores.dat"
 var username
 var pausemenu = false
@@ -24,6 +25,8 @@ func _ready() -> void:
 	$CanvasLayer/Time.clear()
 
 func _process(delta: float) -> void:
+	$CanvasLayer/FPS.visible = showfps
+	$CanvasLayer/FPS.text = "FPS: " + str(Performance.get_monitor(Performance.TIME_FPS))
 	if levelup == false:
 		formattedtime = _format_seconds(time_elapsed, false)
 	if timer_on:

@@ -9,7 +9,7 @@
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/ProgressBar/over.png" type="Texture" id=8]
 [ext_resource path="res://assets/ProgressBar/Bottom.png" type="Texture" id=9]
-[ext_resource path="res://assets/SoundEffects/damage2.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/SoundEffects/damage4.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/Fire/Fire.png" type="Texture" id=11]
 [ext_resource path="res://assets/PotionIcons/speed.png" type="Texture" id=12]
 [ext_resource path="res://assets/PotionIcons/frozen.png" type="Texture" id=13]
@@ -121,6 +121,7 @@ wait_time = 5.0
 
 [node name="Damage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+volume_db = -15.0
 bus = "Effects"
 
 [node name="DamageTimer" type="Timer" parent="."]

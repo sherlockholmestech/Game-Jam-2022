@@ -1,0 +1,21 @@
+{
+	"color": "#ff2255ec",
+	"description": "This is god.",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1655481862.json",
+	"mirror_portraits": false,
+	"name": "God",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/main/tile246.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
