@@ -13,4 +13,4 @@ Download the latest build, stable or unstable, here!
 Daily nightly builds are available here.  
 [![Download A Sinister Time](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/sinistertime/files/Daily%20Nightly%20Builds/)  
 
-**NOTICE:  IT IS NOT RECOMMENDED TO USE THE WEB VERSION FOR THE FINAL RELEASE DUE TO POOR PERFORMANCE.**
+**NOTICE:  IT IS NOT RECOMMENDED TO USE THE WEB VERSION FOR THE FINAL RELEASE DUE BUGS WITH THE PLATFORM.**
