@@ -2,7 +2,7 @@ name: "godot-ci export"
 on: push
 
 env:
-  GODOT_VERSION: 3.4.4
+  GODOT_VERSION: 3.4.4-stable
   EXPORT_NAME: godot-cli-export
 
 jobs:
