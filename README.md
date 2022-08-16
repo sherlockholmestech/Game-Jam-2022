@@ -33,6 +33,3 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2022 [Sherlock Holmes](https://github.com/sherlockholmestech).<br />
 This project is [GNU General Public License v3.0](https://github.com/sherlockholmestech/Game-Jam-2022/blob/main/LICENCE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
