@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to A Sinister Time 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/A Sinister Time" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/A Sinister Time.svg">
-  </a>
   <a href="https://github.com/sherlockholmestech/Game-Jam-2022/wiki" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
