@@ -1,10 +1,10 @@
 <h1 align="center">Welcome to A Sinister Time 👋</h1>
 <p>
   <a href="https://github.com/sherlockholmestech/Game-Jam-2022/wiki" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?style=flat-square" />
   </a>
   <a href="https://github.com/sherlockholmestech/Game-Jam-2022/blob/main/LICENCE" target="_blank">
-    <img alt="License: GNU General Public License v3.0" src="https://img.shields.io/badge/License-GNU General Public License v3.0-yellow.svg" />
+    <img alt="License: GNU General Public License v3.0" src="https://img.shields.io/badge/License-GNU General Public License v3.0-yellow.svg?style=flat-square" />
   </a>
 </p>
 
