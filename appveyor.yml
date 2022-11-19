@@ -13,7 +13,7 @@ environment:
   # Set the Godot version you want to use here. Supported Godot versions can be
   # found here: https://cloud.docker.com/u/gamedrivendesign/repository/docker/gamedrivendesign/godot-export/tags
   # If your version is not available, please open an issue here: https://github.com/GameDrivenDesign/docker-godot-export
-  GODOT_VERSION: "3.4.5"
+  GODOT_VERSION: "3.4.4"
 
 # The following two lines can be enabled to allow a RDP connection to the machine
 # Connection details will be displayed in the build log.
